@@ -4,4 +4,9 @@
     <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CodingCat.Cache" Version="0.1.1" />
+    <PackageReference Include="CodingCat.Serializers" Version="0.1.0" />
+  </ItemGroup>
+
 </Project>
