@@ -39,11 +39,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodingCat.Cache, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CodingCat.Cache.0.1.1\lib\net461\CodingCat.Cache.dll</HintPath>
+    <Reference Include="CodingCat.Cache, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodingCat.Cache.0.2.1\lib\net461\CodingCat.Cache.dll</HintPath>
     </Reference>
-    <Reference Include="CodingCat.Cache.Memory, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CodingCat.Cache.Memory.0.1.1\lib\net461\CodingCat.Cache.Memory.dll</HintPath>
+    <Reference Include="CodingCat.Cache.Memory, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodingCat.Cache.Memory.0.2.2\lib\net461\CodingCat.Cache.Memory.dll</HintPath>
     </Reference>
     <Reference Include="CodingCat.Cache.Redis, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CodingCat.Cache.Redis.0.1.1\lib\netstandard2.0\CodingCat.Cache.Redis.dll</HintPath>
