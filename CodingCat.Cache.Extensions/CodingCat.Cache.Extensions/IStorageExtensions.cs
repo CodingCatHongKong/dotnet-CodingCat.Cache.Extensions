@@ -42,8 +42,16 @@ namespace CodingCat.Cache.Extensions
             var serialized = storage
                 .Get(
                     key,
-                    () => serializer.Serialize(callback())
+                    () =>
+                    {
+                        var item = callback();
+                        if (item == null) return null;
+
+                        return serializer.Serialize(callback());
+                    }
                 );
+
+            if (serialized == null) return default(T);
             return serializer.Deserialize(serialized);
         }
 
