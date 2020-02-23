@@ -14,6 +14,8 @@ namespace CodingCat.Cache.Extensions
             ISerializer<T, string> serializer = null
         )
         {
+            if (value == null) return storage;
+
             var serialized = (serializer ?? GetDefaultSerializer<T>())
                 .Serialize(value);
             return storage.Add(key, serialized);
@@ -26,6 +28,8 @@ namespace CodingCat.Cache.Extensions
         )
         {
             var serialized = storage.Get(key);
+            if (serialized == null) return default(T);
+
             return (serializer ?? GetDefaultSerializer<T>())
                 .Deserialize(serialized);
         }
