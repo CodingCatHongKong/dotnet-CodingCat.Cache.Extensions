@@ -49,5 +49,32 @@ namespace CodingCat.Cache.Extensions.Tests
             Assert.IsNotNull(actual);
             Assert.AreEqual(expected.Id, actual.Id);
         }
+
+        [TestMethod]
+        public void Test_Null_NotCached()
+        {
+            // Arrange
+            var notExpected = false;
+            var usingKey = this.KeyBuilder
+                .UseKey(nameof(Test_Null_NotCached));
+
+            this.StorageManager
+                .Delete(usingKey)
+                .Get<object>(usingKey, () => null);
+
+            // Act
+            var actual = notExpected;
+            this.StorageManager.Get<object>(
+                usingKey,
+                () =>
+                {
+                    actual = !notExpected;
+                    return null;
+                }
+            );
+
+            // Assert
+            Assert.AreNotEqual(notExpected, actual);
+        }
     }
 }
