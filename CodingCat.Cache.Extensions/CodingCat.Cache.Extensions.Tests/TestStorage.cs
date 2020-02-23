@@ -51,6 +51,24 @@ namespace CodingCat.Cache.Extensions.Tests
         }
 
         [TestMethod]
+        public void Test_AddGetNullItem_Ok()
+        {
+            // Arrange
+            var usingKey = this.KeyBuilder
+                .UseKey(nameof(Test_AddGetNullItem_Ok));
+            var item = null as object;
+
+            // Act
+            var actual = this.StorageManager
+                .Delete(usingKey)
+                .Add(usingKey, item)
+                .Get<object>(usingKey);
+
+            // Assert
+            Assert.IsNull(actual);
+        }
+
+        [TestMethod]
         public void Test_Null_NotCached()
         {
             // Arrange
