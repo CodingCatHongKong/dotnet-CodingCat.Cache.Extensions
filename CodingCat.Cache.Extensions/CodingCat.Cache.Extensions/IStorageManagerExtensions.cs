@@ -32,13 +32,12 @@ namespace CodingCat.Cache.Extensions
 
             var item = default(T);
             var serialized = storageManager.Get(key, fallbackPolicy);
-            if (serialized == null)
+            if (serialized == null || (item = serializer.Deserialize(serialized)) == null)
             {
                 item = callback();
                 serialized = serializer.Serialize(item);
                 storageManager.Add(key, serialized);
             }
-            else item = serializer.Deserialize(serialized);
 
             return item;
         }
